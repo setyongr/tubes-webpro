@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>E-Commerce</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Jualin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="form-inline mr-auto ml-1">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="mr-0">
+            <a href="" class="btn btn-primary">Login</a>
+            <a href="" class="btn btn-outline-primary">Register</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" style="margin-top: 100px">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row no-gutters">
+            <div class="col-md-2">
+              <ul class="nav nav-tabs flex-column" id="detailTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="img1-tab" data-toggle="tab" href="#img1" role="tab" aria-controls="img1" aria-selected="true">
+                    <img src="images/small/image1.png" class="img-fluid" alt="">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="img2-tab" data-toggle="tab" href="#img2" role="tab" aria-controls="img2" aria-selected="false">
+                    <img src="images/small/image2.png" class="img-fluid" alt="">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="img3-tab" data-toggle="tab" href="#img3" role="tab" aria-controls="img3" aria-selected="false">
+                    <img src="images/small/image3.png" class="img-fluid" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-10">
+              <div class="tab-content" id="detailTabContent">
+                <div class="tab-pane fade show active" id="img1" role="tabpanel" aria-labelledby="img1-tab">
+                  <img src="images/small/image1.png" class="img-fluid" alt="" data-zoom-image="images/large/image1.png">
+                </div>
+                <div class="tab-pane fade" id="img2" role="tabpanel" aria-labelledby="img2-tab">
+                  <img src="images/small/image2.png" class="img-fluid" alt="">
+                </div>
+                <div class="tab-pane fade" id="img3" role="tabpanel" aria-labelledby="img3-tab">
+                  <img src="images/small/image3.png" class="img-fluid" alt=""> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+          <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+          <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+          <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+          <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+          <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+        </svg>
+        <small class="d-block mb-3 text-muted">&copy; 2018. Jualin</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Cool stuff</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Random feature</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Team feature</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Stuff for developers</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Another one</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Last time</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Resource</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Resource name</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Another resource</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Final resource</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Business</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Education</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Government</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Gaming</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Team</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Locations</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Privacy</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Terms</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/fontawesome-all.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+  <script type="text/javascript" src="js/rivets.bundled.min.js"></script>
+  <script src="js/jquery.elevateZoom-3.0.8.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#detailTabContent img').each(function() {
+               $(this).elevateZoom({
+                  easing : true,
+                  scrollZoom : true
+               }); 
+            })
+    })
+  </script>
+</body>
+
+</html>

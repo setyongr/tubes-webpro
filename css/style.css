@@ -60,3 +60,7 @@ opacity: 1;
   font-size: 15pt;
   font-weight: bold;
 }
+
+.detail-img {
+  width: 100%;
+}
