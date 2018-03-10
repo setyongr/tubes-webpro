@@ -1,0 +1,62 @@
+body {
+  background: #fff;
+}
+
+.navbar {
+  background: #22A7F0;
+}
+
+.jumbotron {
+  background: #fff;
+  margin-top: 50px;
+}
+
+.slider {
+  margin: 10px auto;
+}
+
+.slick-slide {
+margin: 0px 20px;
+}
+
+.slick-slide img {
+width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: black;
+}
+
+
+.slick-slide {
+transition: all ease-in-out .3s;
+opacity: .2;
+}
+
+.slick-active {
+opacity: .5;
+}
+
+.slick-current {
+opacity: 1;
+}
+
+.card-link {
+  text-decoration: none; 
+  color: black;
+}
+
+.card-link:hover {
+  color: black;
+}
+
+.card-link > div:hover {
+  box-shadow: 1px 1px 5px #888888;
+}
+
+.item-price {
+  color: red;
+  font-size: 15pt;
+  font-weight: bold;
+}
