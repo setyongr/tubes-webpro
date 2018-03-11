@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background: #22A7F0;
+  background: #e74c3c;
 }
 
 .jumbotron {
@@ -63,4 +63,16 @@ opacity: 1;
 
 .detail-img {
   width: 100%;
+}
+
+.img-small {
+  width: 25%;
+}
+
+.image-tab .nav-item {
+  width: 10%;
+}
+
+.image-tab .nav-item a {
+  padding: 0px;
 }
