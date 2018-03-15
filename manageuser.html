@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>E-Commerce</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="lib/dataTables/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Jualin Admin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">User Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Product Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Order Management</a>
+            </li>
+          </ul>
+          <div class="mr-0">
+            <button class="btn btn-primary">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" style="margin-top: 100px">
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md-8">
+          <h3>User Management</h3>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAdd">
+            <i class="fas fa-plus"></i> Tambah</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table id="cartData" class="table display" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Aksi</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL ADD -->
+  <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAddLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddLabel">Tambah User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="addName">Name</label>
+              <input type="email" class="form-control" id="addName" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="addEmail">Email address</label>
+              <input type="email" class="form-control" id="addEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="addPassword">Password</label>
+              <input type="password" class="form-control" id="addPassword" placeholder="Password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ADD END -->
+
+  <!-- MODAL UPDATE -->
+  <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalUpdateLabel">Update User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="updateName">Name</label>
+              <input type="email" class="form-control" id="updateName" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="updateEmail">Email address</label>
+              <input type="email" class="form-control" id="updateEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="updatePassword">Password</label>
+              <input type="password" class="form-control" id="updatePassword" placeholder="Password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL UPDATE END -->
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+          <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+          <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+          <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+          <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+          <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+        </svg>
+        <small class="d-block mb-3 text-muted">&copy; 2018. Jualin</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Cool stuff</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Random feature</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Team feature</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Stuff for developers</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Another one</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Last time</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Resource</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Resource name</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Another resource</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Final resource</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Business</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Education</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Government</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Gaming</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Team</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Locations</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Privacy</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Terms</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/fontawesome-all.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+  <script type="text/javascript" src="js/rivets.bundled.min.js"></script>
+  <script src="js/jquery.zoom.min.js"></script>
+  <script type="text/javascript" src="lib/dataTables/datatables.js"></script>
+  <script type="text/javascript" src="js/sweetalert.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $('#cartData').DataTable({
+        "ajax": "./data/user.json",
+        "columnDefs": [{
+          targets: 2,
+          render: (data, type, row) =>
+            `
+              <button class="btn btn-danger delete-item" data-id="${data}"><i class="fas fa-trash"></i></button>
+              <button href="update/${data}" class="btn btn-success" data-toggle="modal" data-target="#modalUpdate" data-id="${data}"><i class="fas fa-edit"></i></button>     
+              `
+        }]
+      });
+
+      $('#cartData tbody').on('click', '.delete-item', (e) => {
+        swal({
+            title: "Apakah Anda yakin menghapus data ini?",
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              console.log(e.currentTarget)
+              console.log('Deleting: ' + e.currentTarget.dataset.id)
+              swal("Data dihapus", {
+                icon: "success",
+              });
+            }
+          });
+      })
+    })
+  </script>
+</body>
+
+</html>
