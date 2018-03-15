@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>E-Commerce</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="lib/dataTables/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Jualin Admin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.user.html">User Management</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin.produk.html">Product Management</a>
+            </li>
+          </ul>
+          <div class="mr-0">
+            <button class="btn btn-primary">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" style="margin-top: 100px">
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md-8">
+          <h3>Produk Management</h3>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAdd">
+            <i class="fas fa-plus"></i> Tambah</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table id="produkData" class="table display" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Rating</th>
+                <th style="width: 10%;">Image</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Rating</th>
+                <th style="width: 10%;">Image</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL ADD -->
+  <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAddLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddLabel">Tambah User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="addName">Name</label>
+              <input type="text" class="form-control" id="addName" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="addHarga">Harga</label>
+              <input type="text" class="form-control" id="addHarga" placeholder="Enter harga">
+            </div>
+            <div class="form-group">
+              <label for="addRating">Rating</label>
+              <input type="text" class="form-control" id="addRating" placeholder="Enter rating">
+            </div>
+            <div class="form-group">
+              <label for="addKategori">Kategori</label>
+              <input type="text" class="form-control" id="addKategori" placeholder="Enter kategori">
+            </div>
+            <div class="form-group">
+              <label for="addImage">Image</label>
+              <input type="file" class="form-control" id="addImage">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ADD END -->
+
+  <!-- MODAL UPDATE -->
+  <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalUpdateLabel">Update User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="updateName">Name</label>
+                  <input type="text" class="form-control" id="updateName" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                  <label for="updateHarga">Harga</label>
+                  <input type="text" class="form-control" id="updateHarga" placeholder="Enter Harga">
+                </div>
+                <div class="form-group">
+                  <label for="updateRating">Rating</label>
+                  <input type="text" class="form-control" id="updateRating" placeholder="Enter Rating">
+                </div>
+                <div class="form-group">
+                  <label for="updateKategori">Kategori</label>
+                  <input type="text" class="form-control" id="updateKategori" placeholder="Enter Kategori">
+                </div>
+                <div class="form-group">
+                  <label for="updateImage">Image</label>
+                  <input type="file" class="form-control" id="updateImage">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL UPDATE END -->
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">&copy; 2018. Jualin</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Tentang kami</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Kegiatan</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Karir</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Riwayat</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Official Store</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Profil kami</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Tata Cara</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Cara pembayaran</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Cara Pemesanan</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Setting Profil</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Atasan Pria</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Kemeja Pria</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Atasan Wanita</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Kemeja Wanita</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Bantuan</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="#">Syarat dan Ketentuan</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Panduan Keamanan</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Kebijakan Privasi</a>
+          </li>
+          <li>
+            <a class="text-muted" href="#">Pusat Resolusi</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/fontawesome-all.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+  <script type="text/javascript" src="js/rivets.bundled.min.js"></script>
+  <script src="js/jquery.zoom.min.js"></script>
+  <script type="text/javascript" src="lib/dataTables/datatables.js"></script>
+  <script type="text/javascript" src="js/sweetalert.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $.getJSON('./data/produk.json', (response) => {
+        const data = response.data.reduce((acc, v) => {
+          const data = v.data.map(it => [it.name, it.price, it.rating, it.image, v.kategori])
+          return acc.concat(data);
+        }, []);
+        console.log(data)
+        $('#produkData').DataTable({
+          data,
+          columnDefs: [{
+            targets: 3,
+            render: (data, type, row) => `<img src="${data}" class="img-fluid"/>`
+          }, {
+            targets: 5,
+            render: (data, type, row) =>
+              `
+              <button class="btn btn-danger delete-item"><i class="fas fa-trash"></i></button>
+              <button class="btn btn-success" data-toggle="modal" data-target="#modalUpdate"><i class="fas fa-edit"></i></button>     
+              `
+          }]
+        });
+      })
+
+      $('#produkData tbody').on('click', '.delete-item', (e) => {
+        swal({
+            title: "Apakah Anda yakin menghapus data ini?",
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Data dihapus", {
+                icon: "success",
+              });
+            }
+          });
+      })
+    })
+  </script>
+</body>
+
+</html>
