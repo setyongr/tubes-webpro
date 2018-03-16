@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <!-- Navbar -->
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <div class="container">
@@ -56,16 +57,24 @@
       </div>
     </nav>
   </header>
+  <!-- Navbar -->
 
+  <!-- MAIN CONTENT -->
   <main role="main" style="margin-top: 100px">
     <div class="container">
+      <!-- PRODUCT NAME -->
       <div class="row">
         <div class="col">
           <h1 class="display-5">Nama Produk</h1>
         </div>
       </div>
+      <!-- END PRODUCT NAME -->
+
+      <!-- PRODUCT OVERVIEW -->
       <div class="row">
+        <!-- PRODUCT IMAGE -->
         <div class="col-md-8">
+          <!-- SMALL IMAGE TAB -->
           <ul class="nav nav-tabs image-tab" id="detailTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="img1-tab" data-toggle="tab" href="#img1" role="tab" aria-controls="img1" aria-selected="true">
@@ -83,6 +92,8 @@
               </a>
             </li>
           </ul>
+          <!-- END SMALL IMAGE TAB -->
+          <!-- BIG IMAGE CONTENT -->
           <div class="tab-content" id="detailTabContent">
             <div class="tab-pane fade show active" id="img1" role="tabpanel" aria-labelledby="img1-tab">
               <img src="images/large/baju1.jpg" class="img-fluid detail-img" alt="" data-zoom-image="images/large/baju1.jpg">
@@ -93,7 +104,11 @@
             <div class="tab-pane fade" id="img3" role="tabpanel" aria-labelledby="img3-tab">
               <img src="images/large/baju3.jpg" class="img-fluid detail-img" alt=""> </div>
           </div>
+          <!-- BIG IMAGE CONTENT -->
         </div>
+        <!-- END PRODUCT IMAGE -->
+
+        <!-- PRODUCT PRICE AND BUY OPTION -->
         <div class="com-md-4">
           <h2>Rp. 65100</h2>
           <p style="font-weight: bold">
@@ -116,9 +131,15 @@
               <i class="fas fa-shopping-cart"></i> Tambahkan ke Keranjang</button>
           </form>
         </div>
+        <!-- END PRODUCT PRICE AND BUY OPTION -->
+
       </div>
+      <!-- END PRODUCT OVERVIEW -->
+
+      <!-- PRODUCT DETAIL -->
       <div class="row my-2">
         <div class="col">
+          <!-- TAB -->
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
               <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home"
@@ -127,7 +148,10 @@
                 aria-selected="false">Ulasan</a>
             </div>
           </nav>
+          <!-- END TAB -->
+          <!-- TAB CONTENT -->
           <div class="tab-content" id="nav-tabContent">
+            <!-- PRODUCT DETAIL -->
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               Pakaian ini memiliki design yang cantik, pemilihan bahannya disesuaikan dengan selera pengguna saat ini, yaitu dingin dan
               nyaman dipakai. Dengan mengutamakan penampilan yang sederhana tetapi tidak membuang sisi elegan pada pakaian
@@ -136,6 +160,8 @@
               3 variasi ukuran yaitu S, M , XL. Baju ini memiliki rating sebesar 8.2 yang artinya baju ini memiliki peminat
               yang lumayan banyak.
             </div>
+            <!-- END PRODUCT DETAIL -->
+            <!-- REVIEW -->
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="card my-2">
                 <div class="card-body">
@@ -162,12 +188,16 @@
                 </div>
               </div>
             </div>
+            <!-- END REVIEW -->
           </div>
+          <!-- END TAB CONTENT -->
         </div>
       </div>
+      <!-- END PRODUCT DETAIL -->
     </div>
-
   </main>
+  <!-- END MAIN -->
+
   <footer class="container py-5">
     <div class="row">
       <div class="col-12 col-md">
@@ -258,6 +288,7 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
+      // Image zoom
       $('.detail-img')
         .wrap('<span style="display:inline-block; width: 100%"></span>')
         .css('display', 'block')

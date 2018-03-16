@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <!-- Navbar -->
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <div class="container">
@@ -56,10 +57,12 @@
       </div>
     </nav>
   </header>
+  <!-- Navbar -->
 
   <main role="main">
     <div class="my-5 py-5 bg-light">
       <div class="container">
+        <!-- SLIDER -->
         <div class="row">
           <div class="col">
             <div class="slider">
@@ -84,12 +87,20 @@
             </div>
           </div>
         </div>
+        <!-- END SLIDER -->
+
+        <!-- CONTENT -->
         <div class="row my-3" rv-each-cat="category" id="category-list">
+
+          <!-- CATEGORY TITLE -->
           <div class="row">
             <div class="col">
               <h2 class="display-4">{cat.name}</h2>
             </div>
           </div>
+          <!-- END CATEGORY TITLE -->
+
+          <!-- PRODUCT LIST -->
           <div class="row">
             <div class="col-md-2 col-sm-6 my-2" rv-each-item="cat.data">
               <a rv-detail-href="item.name" class="card-link" style="height: 100%">
@@ -105,16 +116,24 @@
               </a>
             </div>
           </div>
+          <!-- END PRODUCT LIST -->
+
         </div>
+        <!-- END CONTENT -->
+
       </div>
     </div>
-
   </main>
+ 
+  <!-- FOOTER -->
   <footer class="container py-5">
     <div class="row">
+      <!-- FIRST COLUMN -->
       <div class="col-12 col-md">
         <small class="d-block mb-3 text-muted">&copy; 2018. Jualin</small>
       </div>
+      <!-- END FIRST COLUMN -->
+      <!-- SECOND COLUMN -->
       <div class="col-6 col-md">
         <h5>Tentang kami</h5>
         <ul class="list-unstyled text-small">
@@ -138,6 +157,8 @@
           </li>
         </ul>
       </div>
+      <!-- END SECOND COLUMN -->
+      <!-- THIRD COLUMN -->
       <div class="col-6 col-md">
         <h5>Tata Cara</h5>
         <ul class="list-unstyled text-small">
@@ -152,6 +173,8 @@
           </li>
         </ul>
       </div>
+      <!-- END THIRD COLUMN -->
+      <!-- FOURTH COLUMN -->
       <div class="col-6 col-md">
         <h5>Resources</h5>
         <ul class="list-unstyled text-small">
@@ -169,6 +192,8 @@
           </li>
         </ul>
       </div>
+      <!-- END FOURTH COLUMN -->
+      <!-- FIFTH COLUMN -->
       <div class="col-6 col-md">
         <h5>Bantuan</h5>
         <ul class="list-unstyled text-small">
@@ -186,8 +211,10 @@
           </li>
         </ul>
       </div>
+      <!-- END FIFTH COLUMN -->
     </div>
   </footer>
+  <!-- END FOOTER -->
 
 
   <script src="js/fontawesome-all.min.js"></script>
@@ -199,6 +226,8 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
+
+      // INITIALIZE SLIDER
       $('.slider').slick({
         centerMode: true,
         centerPadding: '60px',
@@ -224,23 +253,29 @@
         ]
       });
 
+      // Create custom binding
       rivets.binders['detail-href'] = (el, val) => {
         el.href = "detail.html#" + val
       }
 
+      // Category data
       const data = {
         category: []
       }
 
+      // Bind category-list to data
       rivets.bind($('#category-list'), data)
 
-      // Get json
+      // Get produk from json
       $.getJSON('./data/produk.json', (response) => {
+        // Map response to data
         data.category = response.data.map((it) => ({
           name: it.kategori,
           data: it.data
         }))
       })
+
+
     })
   </script>
 </body>

@@ -46,6 +46,7 @@
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main role="main" style="margin-top: 100px">
     <div class="container">
       <div class="row my-5">
@@ -59,7 +60,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <table id="cartData" class="table display" cellspacing="0" width="100%">
+          <table id="userData" class="table display" cellspacing="0" width="100%">
             <thead>
               <tr>
                 <th>Nama</th>
@@ -80,6 +81,7 @@
 
     </div>
   </main>
+  <!-- END MAIN -->
 
   <!-- MODAL ADD -->
   <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAddLabel" aria-hidden="true">
@@ -150,6 +152,7 @@
     </div>
   </div>
   <!-- MODAL UPDATE END -->
+
   <footer class="container py-5">
     <div class="row">
       <div class="col-12 col-md">
@@ -242,7 +245,9 @@
 
   <script type="text/javascript">
     $(document).ready(() => {
-      $('#cartData').DataTable({
+
+      // Set up data table
+      $('#userData').DataTable({
         "ajax": "./data/user.json",
         "columnDefs": [{
           targets: 2,
@@ -254,7 +259,8 @@
         }]
       });
 
-      $('#cartData tbody').on('click', '.delete-item', (e) => {
+      // Set up delete action click
+      $('#userData tbody').on('click', '.delete-item', (e) => {
         swal({
             title: "Apakah Anda yakin menghapus data ini?",
             text: "Data yang dihapus tidak dapat dikembalikan!",
@@ -272,6 +278,7 @@
             }
           });
       })
+      
     })
   </script>
 </body>
